@@ -1,7 +1,13 @@
 import "./ProductDetails.css";
 import flowersImg from "../assets/flowers1.jpg";
+import { useState } from "react";
 
 const ProductDetails = () => {
+
+  const [quantity, setQuantity] = useState(1);
+  const increase = () => setQuantity(quantity + 1);
+  const decrease = () => { if (quantity > 1) setQuantity(quantity - 1); };
+
   return (
     <div className="product-details">
       <div className="product-container">
@@ -37,13 +43,10 @@ const ProductDetails = () => {
             </div>
 
             {/* Quantity */}
-            <div className="quantity-section">
-              <label>Quantity:</label>
-              <div className="quantity-selector">
-                <button className="quantity-minus">−</button>
-                <span className="quantity-value">1</span>
-                <button className="quantity-plus">+</button>
-              </div>
+            <div className="quantity-selector">
+              <button className="quantity-minus" onClick={decrease}>−</button>
+              <span className="quantity-value">{quantity}</span>
+              <button className="quantity-plus" onClick={increase}>+</button>
             </div>
 
             {/* Buttons */}

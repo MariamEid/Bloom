@@ -183,6 +183,7 @@
   background: var(--qty-bg);
   border-radius: 8px;
   overflow: hidden;
+  width: fit-content;
 }
 .quantity-selector button {
   background: none;
