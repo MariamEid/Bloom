@@ -17,11 +17,10 @@ function Navbar() {
       </ul>
 
       <div className="nav-right">
-        <input
-          type="text"
-          placeholder="Search flower"
-          className="search-input"
-        />
+        <div className="search-wrapper">
+          <span className="search-icon">🔍</span>
+          <input type="text" placeholder="Search flower" className="search-input" />
+        </div>
 
         <span className="icon">🛒</span>
         <span className="icon">👤</span>

@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import Home from "./pages/Home";
-
-function App() {
-  return <Home />;
-=======
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -20,7 +14,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
->>>>>>> main
 }
 
 export default App;
