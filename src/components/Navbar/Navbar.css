@@ -1,0 +1,53 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+  background-color: white;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+
+  /* Add flexbox to align the image and text perfectly */
+  display: flex;
+  align-items: center; 
+  gap: 12px; /* Adds space between the image and the word BLOOM */
+}
+
+/* Add a new class to control the image size */
+.logo-img {
+  width: 100px;/* Adjust this to match your Figma dimensions */
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 100px;
+  list-style: none;
+
+  font-size: 28px;
+  margin: 0;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-input {
+  border: none;
+  background-color: #f1ebf4;
+
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 220px;
+}
+
+.icon {
+  font-size: 32px;
+  cursor: pointer;
+}

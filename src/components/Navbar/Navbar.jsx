@@ -1,10 +1,12 @@
 import "./Navbar.css";
+import logoImg from "../../assets/icons/logo.png";
 
 function Navbar() {
   return (
     <nav className="navbar-container">
       <div className="logo">
-        🌼 BLOOM
+        <img src={logoImg} alt="Bloom Logo" className="logo-img" />
+         BLOOM
       </div>
 
       <ul className="nav-links">
