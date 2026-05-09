@@ -8,35 +8,40 @@ function CartItem(props) {
         width="150"
       />
 
-      <div>
+      <div className="cart-details">
+
         <h2>{props.name}</h2>
 
         <p>${props.price}</p>
 
-        <div className="quantity-controls">
+        <div className="cart-actions">
+
+          <div className="quantity-controls">
+
+            <button
+              onClick={() => props.onDecrease(props.id)}
+            >
+              -
+            </button>
+
+            <span>{props.quantity}</span>
+
+            <button
+              onClick={() => props.onIncrease(props.id)}
+            >
+              +
+            </button>
+
+          </div>
 
           <button
-            onClick={() => props.onDecrease(props.id)}
+            className="remove-btn"
+            onClick={() => props.onRemove(props.id)}
           >
-            -
-          </button>
-
-          <span>{props.quantity}</span>
-
-          <button
-            onClick={() => props.onIncrease(props.id)}
-          >
-            +
+            Remove
           </button>
 
         </div>
-
-        <button
-          className="remove-btn"
-          onClick={() => props.onRemove(props.id)}
-        >
-          Remove
-        </button>
 
       </div>
 
