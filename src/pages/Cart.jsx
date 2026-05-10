@@ -1,44 +1,19 @@
-import { useState } from "react";
 import CartItem from "../components/cart/CartItem";
 import OrderSummary from "../components/cart/OrderSummary";
-import cartData from "../constants/cartData";
+import { useCart } from "../context/CartContext";
 import "../styles/cart.css";
 
 function Cart() {
-  const [cartItems, setCartItems] = useState(cartData);
-
-  const increaseQuantity = (id) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
-    );
-  };
-
-  const decreaseQuantity = (id) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
-    );
-  };
-
-  const removeItem = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-
-  const shipping = cartItems.length === 0 ? 0 : 9.99;
-  const tax = subtotal * 0.1;
-  const finalTotal = subtotal + shipping + tax;
+  const {
+    cartItems,
+    increaseQuantity,
+    decreaseQuantity,
+    removeItem,
+    subtotal,
+    shipping,
+    tax,
+    finalTotal,
+  } = useCart();
 
   return (
     <div className="cart-page">
