@@ -34,16 +34,16 @@
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 14px;
-  padding: 18px;
+  padding: 14px 18px;
   margin-bottom: 18px;
 }
 
 .cart-item img {
-  width: 140px;
+  width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 12px;
-  background-color: #f2f2f2;
+  background-color: #f3f3f3;
 }
 
 .cart-details {
@@ -110,6 +110,8 @@
   border: 1px solid #eee;
   border-radius: 14px;
   padding: 24px;
+  position: sticky;
+  top: 120px;
 }
 
 .order-summary h2 {
@@ -140,6 +142,10 @@
   border-radius: 8px;
   cursor: pointer;
   margin-top: 18px;
+}
+.remove-btn:hover {
+  background-color: #ff3b3b;
+  color: white;
 }
 
 @media (max-width: 768px) {
