@@ -16,7 +16,7 @@
 
 /* Add a new class to control the image size */
 .logo-img {
-  width: 72px;/* Adjust this to match your Figma dimensions */
+  width: 80px;/* Adjust this to match your Figma dimensions */
   height: auto;
 }
 
