@@ -2,6 +2,7 @@ import CartItem from "../components/cart/CartItem";
 import OrderSummary from "../components/cart/OrderSummary";
 import { useCart } from "../context/CartContext";
 import "../styles/cart.css";
+import BackButton from "../components/BackButton";
 
 function Cart() {
   const {
@@ -18,6 +19,7 @@ function Cart() {
   return (
     <div className="cart-page">
       <h1>Shopping Cart</h1>
+      <BackButton />
 
       <div className="cart-container">
         <div className="cart-items">

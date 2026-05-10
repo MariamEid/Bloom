@@ -1,15 +1,41 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
 import products from "../data/products";
+import { useCart } from "../context/CartContext";
+import CategoryBadge from "../components/CategoryBadge";
+import BackButton from "../components/BackButton";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const product = products.find(p => p.id === Number(id));
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
+  const [added, setAdded] = useState(false);
+
+  useEffect(() => {
+    const found = products.find(p => p.id === Number(id));
+    setProduct(found);
+    setLoading(false);
+  }, [id]);
+
   const increase = () => setQuantity(quantity + 1);
   const decrease = () => { if (quantity > 1) setQuantity(quantity - 1); };
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setAdded(true);
+    setTimeout(() => {
+      navigate("/cart");
+    }, 1000);
+  };
+
+  if (loading) {
+    return <div className="product-details"><p>Loading...</p></div>;
+  }
 
   if (!product) {
     return <div className="product-details"><p>Product not found.</p></div>;
@@ -19,7 +45,7 @@ const ProductDetails = () => {
     <div className="product-details">
       <div className="product-container">
 
-        <button className="back-link">← Back</button>
+        <BackButton />
 
         <div className="product-layout">
 
@@ -30,7 +56,7 @@ const ProductDetails = () => {
 
           {/* Right column - Product info */}
           <div className="product-info">
-            <h2 className="product-category">{product.category}</h2>
+            <CategoryBadge category={product.category} />
             <h1 className="product-name">{product.name}</h1>
             <div className="product-price">${product.price}</div>
 
@@ -58,7 +84,9 @@ const ProductDetails = () => {
 
             {/* Buttons */}
             <div className="action-buttons">
-              <button className="add-to-cart">🛒 Add to Cart</button>
+              <button className="add-to-cart" onClick={handleAddToCart}>
+                {added ? "✓ Added to Cart!" : "🛒 Add to Cart"}
+              </button>
               <button className="customize-message">Customize Message</button>
             </div>
 

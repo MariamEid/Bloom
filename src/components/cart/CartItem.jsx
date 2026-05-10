@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function CartItem(props) {
+  const navigate = useNavigate();
+
   return (
     <div className="cart-item">
 
@@ -6,11 +10,18 @@ function CartItem(props) {
         src={props.image}
         alt={props.name}
         width="150"
+        onClick={() => navigate(`/product/${props.id}`)}
+        style={{ cursor: "pointer" }}
       />
 
       <div className="cart-details">
 
-        <h2>{props.name}</h2>
+        <h2
+          onClick={() => navigate(`/product/${props.id}`)}
+          style={{ cursor: "pointer" }}
+        >
+          {props.name}
+        </h2>
 
         <p>${props.price}</p>
 
