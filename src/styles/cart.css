@@ -1,0 +1,168 @@
+.cart-page {
+  background-color: #faf8f5;
+  min-height: 100vh;
+  padding: 40px 70px;
+  color: #111;
+  font-family: Arial, sans-serif;
+}
+
+.cart-page h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.cart-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.cart-items {
+  flex: 2;
+}
+
+.summary-section {
+  flex: 1;
+}
+
+.cart-item {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: #f3f3f3;
+}
+
+.cart-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cart-item h2 {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+.cart-item p {
+  color: #9c4f91;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  background-color: #e9b7d7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quantity-controls button {
+  border: none;
+  background-color: #e9b7d7;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.quantity-controls span {
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+.remove-btn {
+  border: 1px solid #ff5b5b;
+  background-color: #fff;
+  color: #ff3b3b;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove-btn:hover {
+  background-color: #ffefef;
+}
+
+.order-summary {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 24px;
+  position: sticky;
+  top: 120px;
+}
+
+.order-summary h2 {
+  font-size: 26px;
+  margin-bottom: 28px;
+}
+
+.order-summary p,
+.order-summary h3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.order-summary h3 {
+  border-top: 1px solid #ccc;
+  padding-top: 22px;
+  margin-top: 28px;
+  color: #9c4f91;
+}
+
+.order-summary button {
+  width: 100%;
+  background-color: #9c4f91;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 18px;
+}
+.remove-btn:hover {
+  background-color: #ff3b3b;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .summary-section {
+    width: 100%;
+  }
+
+  .cart-page {
+    padding: 25px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
