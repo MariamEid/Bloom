@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import "./Navbar.css";
 import logoImg from "../../assets/icons/logo.png";
@@ -6,8 +6,22 @@ import logoImg from "../../assets/icons/logo.png";
 function Navbar() {
   const { cartItems } = useCart();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  const handleShopClick = () => {
+    if (location.pathname === "/") {
+      // already on home page, just scroll
+      document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+    } else {
+      // navigate to home first, then scroll
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
 
   return (
     <nav className="navbar-container">
@@ -18,9 +32,10 @@ function Navbar() {
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/">Shop</Link></li>
-        <li><Link to="/">About</Link></li>
+        <li><span onClick={handleShopClick} style={{ cursor: "pointer" }}>Shop</span></li>
+        <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+        
       </ul>
 
       <div className="nav-right">

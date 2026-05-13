@@ -8,7 +8,9 @@ function Hero() {
         <p className="hero-subtitle">
           Handpicked bouquets for every moment. Beautifully arranged and delivered to your door.
         </p>
-        <button className="hero-btn">Shop Now</button>
+        <button className="hero-btn" onClick={() => document.getElementById('products').scrollIntoView({ behavior: 'smooth' })}>
+          Shop Now
+        </button>
       </div>
     </section>
   );
