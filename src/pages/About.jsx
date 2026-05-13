@@ -1,6 +1,16 @@
+import { useState, useEffect } from "react";
 import "./About.css";
 
 function About() {
+  const [quote, setQuote] = useState(null);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/quotes/random")
+      .then((res) => res.json())
+      .then((data) => setQuote(data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="about-container">
       <div className="about-hero">
@@ -34,6 +44,14 @@ function About() {
             </div>
           </div>
         </div>
+
+        {/* API fetched quote */}
+        {quote && (
+          <div className="about-quote">
+            <p className="about-quote-text">"{quote.quote}"</p>
+            <p className="about-quote-author">— {quote.author}</p>
+          </div>
+        )}
       </div>
     </div>
   );
