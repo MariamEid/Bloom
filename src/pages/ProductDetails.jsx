@@ -26,7 +26,7 @@ const ProductDetails = () => {
   const decrease = () => { if (quantity > 1) setQuantity(quantity - 1); };
 
   const handleAddToCart = () => {
-    addToCart(product);
+    addToCart({ ...product, quantity });
     setAdded(true);
     setTimeout(() => {
       navigate("/cart");
