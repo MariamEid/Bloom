@@ -11,7 +11,7 @@ function CartItem(props) {
         alt={props.name}
         width="150"
         onClick={() => navigate(`/product/${props.id}`)}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer" }} //inline style to show pointer cursor on hover, indicating it's clickable
       />
 
       <div className="cart-details">

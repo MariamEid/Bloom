@@ -1,4 +1,6 @@
 /* ── Brand tokens ────────────────────────────────────── */
+/* CSS variables — defined once here, used everywhere with var() */
+/* If we want to change the brand color, we only change it in one place */
 :root {
   --bg-page:    #faf8f5;
   --bg-card:    #fff;
@@ -11,6 +13,7 @@
 }
 
 /* ── Reset ───────────────────────────────────────────── */
+/* Makes sure padding and borders don't add extra width unexpectedly */
 .product-details *,
 .product-details *::before,
 .product-details *::after {
@@ -257,6 +260,7 @@
 }
 
 /* ── Responsive ──────────────────────────────────────── */
+/* When screen is 768px or smaller (mobile/tablet), switch to single column */
 @media (max-width: 768px) {
   .product-container {
     padding: 20px 16px 48px;

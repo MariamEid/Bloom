@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
+// styled.button creates a regular button with these styles permanently attached
+// &:hover is how hover states are written inside styled-components
 const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -25,6 +27,7 @@ const StyledButton = styled.button`
 
 function BackButton() {
   const navigate = useNavigate();
+    // navigate(-1) means go back one page — same as browser back button
   return <StyledButton onClick={() => navigate(-1)}>← Back</StyledButton>;
 }
 
