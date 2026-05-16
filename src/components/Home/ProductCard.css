@@ -1,49 +1,59 @@
+/* individual product card - white rounded card with subtle shadow */
 .product-card {
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* soft shadow: 0 horizontal, 2px vertical, 8px blur, 8% black */
+  overflow: hidden; /* keeps the image inside the rounded corners */
   display: flex;
-  flex-direction: column;
-  align-self: start;
-  cursor: pointer;
+  flex-direction: column; /* stacks image and info vertically */
+  align-self: start; /* prevents card from stretching to match tallest card in the row */
+  cursor: pointer; /* shows hand cursor to indicate the card is clickable */
 }
 
+/* product image - fixed height so all images are the same size */
 .product-img {
   width: 100%;
   height: 280px;
-  object-fit: cover;
+  object-fit: cover; /* crops image to fill the area without stretching */
 }
 
+/* info section below the image - stacks category, name, price, button vertically */
 .product-info {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 8px; /* space between each piece of info */
 }
 
+/* category label - e.g. Love, Birthday */
+/* .product-card prefix makes this rule more specific to override teammate's conflicting CSS */
 .product-card .product-category {
   font-size: 16px;
   color: #9c4f91;
   font-weight: 600;
-  background: none;
-  padding: 0;
+  background: none; /* removes any background that teammate's CSS may have added */
+  padding: 0; /* removes any padding that teammate's CSS may have added */
 }
 
+/* product name */
+/* .product-card prefix makes this rule more specific to override teammate's conflicting CSS */
 .product-card .product-name {
   font-size: 20px;
   font-weight: bold;
   color: #111;
-  margin: 0;
+  margin: 0; /* removes default h3 margin */
 }
 
+/* product price */
+/* .product-card prefix makes this rule more specific to override teammate's conflicting CSS */
 .product-card .product-price {
   font-size: 16px;
   font-weight: 700;
   color: #111;
-  margin: 0;
+  margin: 0; /* removes default p margin */
 }
 
+/* add to cart button - purple pill button at the bottom of the card */
 .add-to-cart-btn {
   background-color: #9c4f91;
   color: white;
@@ -53,11 +63,15 @@
   font-size: 18px;
   cursor: pointer;
   margin-top: 8px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* smooth color change when hovering or when added class is applied */
 }
+
+/* when item is added to cart, button turns green */
 .add-to-cart-btn.added {
   background-color: #4caf50;
 }
+
+/* darker purple on hover */
 .add-to-cart-btn:hover {
   background-color: #7a3d72;
 }

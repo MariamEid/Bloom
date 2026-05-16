@@ -6,6 +6,7 @@ function Home() {
   return (
     <div>
       <Hero />
+      {/* products grid - filter buttons and all flower cards */}
       <ProductsSection />
       <FeaturesStrip />
     </div>

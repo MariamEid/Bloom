@@ -1,25 +1,31 @@
+/* main about page wrapper - cream background, full viewport height minimum */
 .about-container {
   background-color: #faf8f5;
   font-family: Arial, sans-serif;
-  min-height: 100vh;
+  min-height: 100vh; /* ensures the page fills the full screen even with little content */
 }
 
+/* hero banner at the top - diagonal gradient background */
 .about-hero {
-  background: linear-gradient(135deg, #f5e6f0, #c9a0c0);
+  background: linear-gradient(135deg, #f5e6f0, #c9a0c0); /* 135deg makes the gradient go diagonally */
   padding: 80px 60px;
 }
 
+/* main heading inside the hero */
 .about-hero h1 {
   font-size: 40px;
   color: #111;
   margin-bottom: 12px;
 }
 
+/* subtitle text inside the hero */
 .about-hero p {
   font-size: 18px;
   color: #444;
 }
 
+/* 3 column grid layout for the cards - replaced by Bootstrap in About.jsx */
+/* this class is kept in CSS but Bootstrap classes handle the layout instead */
 .about-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -27,6 +33,7 @@
   padding: 60px;
 }
 
+/* individual info card - white rounded card with shadow */
 .about-card {
   background: #fff;
   border-radius: 12px;
@@ -34,45 +41,53 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* card heading - purple color */
 .about-card h2 {
   font-size: 20px;
   color: #9c4f91;
   margin-bottom: 12px;
 }
 
+/* card paragraph and list item text */
 .about-card p, .about-card li {
   font-size: 15px;
   color: #444;
   line-height: 1.6;
 }
 
+/* indentation for the bullet list in Why Choose Us card */
 .about-card ul {
   padding-left: 18px;
 }
 
+/* spacing between each bullet point */
 .about-card li {
   margin-bottom: 8px;
 }
 
+/* responsive layout - stacks cards vertically on smaller screens */
 @media (max-width: 900px) {
   .about-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* single column on small screens */
     padding: 30px 24px;
   }
 
   .about-hero {
-    padding: 50px 24px;
+    padding: 50px 24px; /* less padding on small screens */
   }
 }
+
+/* quote box fetched from the API - displayed below the cards */
 .about-quote {
   margin-top: 48px;
   background-color: #f5e6f0;
-  border-left: 4px solid #9c4f91;
+  border-left: 4px solid #9c4f91; /* purple left border acts as a visual accent */
   border-radius: 8px;
   padding: 24px 32px;
   text-align: center;
 }
 
+/* the quote text - italic purple */
 .about-quote-text {
   font-size: 18px;
   color: #9c4f91;
@@ -80,6 +95,7 @@
   margin-bottom: 8px;
 }
 
+/* the author name below the quote */
 .about-quote-author {
   font-size: 14px;
   color: #555;

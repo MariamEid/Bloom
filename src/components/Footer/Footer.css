@@ -1,10 +1,11 @@
-/* ── Footer CSS (unchanged) + link fix ──────────────── */
+/* main footer wrapper - white background with a subtle top border to separate from page content */
 .footer-container {
   background-color: #fff;
   border-top: 1px solid #eee;
   padding: 60px 80px 20px 80px;
 }
 
+/* footer content split into 4 columns: brand(wider) | shop | support | social */
 .footer-main {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -12,6 +13,7 @@
   margin-bottom: 40px;
 }
 
+/* logo row - image and text side by side */
 .footer-logo {
   display: flex;
   align-items: center;
@@ -22,18 +24,21 @@
   cursor: pointer;
 }
 
+/* logo image size in footer */
 .footer-logo-img {
   width: 64px;
   height: auto;
 }
 
+/* short description text under the logo */
 .footer-desc {
   font-size: 14px;
   color: #555;
   line-height: 1.6;
-  max-width: 220px;
+  max-width: 220px; /* prevents text from stretching too wide */
 }
 
+/* section headings like "Shop" and "Support" */
 .footer-links h4 {
   font-size: 16px;
   font-weight: bold;
@@ -41,6 +46,7 @@
   margin-bottom: 16px;
 }
 
+/* list of links stacked vertically with spacing between them */
 .footer-links ul {
   list-style: none;
   padding: 0;
@@ -50,25 +56,30 @@
   gap: 10px;
 }
 
+/* individual link items */
 .footer-links ul li {
   font-size: 14px;
   color: #555;
   cursor: pointer;
 }
 
+/* purple color on hover for list items */
 .footer-links ul li:hover {
   color: #9c4f91;
 }
 
+/* remove underline from links and inherit color from parent */
 .footer-links a {
   text-decoration: none;
   color: inherit;
 }
 
+/* purple color on hover for anchor tags */
 .footer-links a:hover {
   color: #9c4f91;
 }
 
+/* "Follow Us" heading */
 .footer-social h4 {
   font-size: 16px;
   font-weight: bold;
@@ -76,26 +87,31 @@
   margin-bottom: 16px;
 }
 
+/* row of social media icons side by side */
 .social-icons {
   display: flex;
   gap: 16px;
 }
 
+/* each social icon wrapper */
 .social-icon {
   font-size: 24px;
   cursor: pointer;
 }
 
+/* SVG icon size and default color */
 .social-icon svg {
   width: 24px;
   height: 24px;
-  fill: #111;
+  fill: #111; /* fill colors the inside of the SVG shape */
 }
 
+/* purple fill on hover for SVG icons */
 .social-icon:hover svg {
   fill: #9c4f91;
 }
 
+/* bottom bar with copyright - separated by a top border */
 .footer-bottom {
   border-top: 1px solid #eee;
   padding-top: 20px;

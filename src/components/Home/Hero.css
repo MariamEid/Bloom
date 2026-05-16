@@ -1,43 +1,49 @@
+/* hero section - full width banner with gradient background */
 .hero-container {
   width: 100%;
-  min-height: 380px;
-  background: linear-gradient(to right, #fffbe3, #c9a0c0);
+  min-height: 380px; /* minimum height so the hero never looks too small */
+  background: linear-gradient(to right, #fffbe3, #c9a0c0); /* gradient goes from yellow-white on left to purple-pink on right */
   display: flex;
-  align-items: center;
+  align-items: center; /* vertically centers the content inside the hero */
   padding: 40px 80px;
 }
 
+/* wrapper for title, subtitle and button - stacked vertically */
 .hero-content {
   max-width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column; /* stacks children vertically */
+  gap: 20px; /* space between title, subtitle and button */
 }
 
+/* main hero heading */
 .hero-title {
   font-size: 48px;
   font-weight: bold;
   color: #111;
-  line-height: 1.2;
+  line-height: 1.2; /* controls space between lines if text wraps */
 }
 
+/* subtitle paragraph below the heading */
 .hero-subtitle {
   font-size: 18px;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.6; /* more line spacing for readability */
 }
 
+/* shop now button - pill shaped purple button */
 .hero-btn {
   background-color: #9c4f91;
   color: white;
   border: none;
   padding: 14px 28px;
-  border-radius: 30px;
+  border-radius: 30px; /* high border-radius makes it a pill shape */
   font-size: 16px;
   cursor: pointer;
-  width: fit-content;
+  width: fit-content; /* button only as wide as its text, not full width */
 }
 
+/* darker purple on hover */
 .hero-btn:hover {
   background-color: #7a3d72;
 }

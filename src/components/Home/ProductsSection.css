@@ -1,8 +1,10 @@
+/* products section wrapper - cream background with padding */
 .products-section {
   padding: 60px 80px;
   background-color: #faf8f5;
 }
 
+/* "Shop by occasion" heading */
 .products-title {
   font-size: 28px;
   font-weight: bold;
@@ -10,6 +12,7 @@
   margin-bottom: 24px;
 }
 
+/* row of filter buttons - flex so they sit side by side */
 .filter-buttons {
   display: flex;
   gap: 12px;
@@ -17,9 +20,10 @@
   flex-wrap: wrap; /* wraps to next line if screen is narrow */
 }
 
+/* individual filter button - transparent with a border by default */
 .filter-btn {
   padding: 8px 20px;
-  border-radius: 20px;
+  border-radius: 20px; /* pill shape */
   border: 1px solid #111;
   background-color: transparent;
   font-size: 16px;
@@ -27,21 +31,25 @@
   color: #111;
 }
 
+/* purple fill on hover */
 .filter-btn:hover {
   background-color: #9c4f91;
   color: white;
   border-color: #9c4f91;
 }
 
-/* active class is added when the button is selected */
+/* active class is added by useState in ProductsSection when this button is selected */
+/* same style as hover so the selected button stays purple */
 .filter-btn.active {
   background-color: #9c4f91;
   color: white;
   border-color: #9c4f91;
 }
 
+/* products grid - 4 equal columns matching the Figma design */
+/* repeat(4, 1fr) means 4 columns each taking 1 equal fraction of the available width */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns like the Figma */
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }

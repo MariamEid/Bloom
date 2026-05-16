@@ -1,3 +1,4 @@
+/* main navbar layout - uses CSS grid with 3 columns: logo | links | right section */
 .navbar-container {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -6,6 +7,7 @@
   background-color: #faf8f5;
 }
 
+/* logo wrapper - flexbox to align image and text side by side */
 .logo {
   display: flex;
   align-items: center;
@@ -15,11 +17,13 @@
   cursor: pointer;
 }
 
+/* logo image size */
 .logo-img {
   width: 70px;
   height: auto;
 }
 
+/* navigation links row - centered with equal spacing between items */
 .nav-links {
   display: flex;
   gap: 120px;
@@ -30,23 +34,28 @@
   justify-content: center;
 }
 
+/* each nav item is clickable */
 .nav-links li {
   cursor: pointer;
 }
 
+/* hover effect on nav items */
 .nav-links li:hover {
   color: #9c4f91;
 }
 
+/* remove default underline and inherit color from parent */
 .nav-links a {
   text-decoration: none;
   color: inherit;
 }
 
+/* purple color on hover for links */
 .nav-links a:hover {
   color: #9c4f91;
 }
 
+/* right side of navbar - search, cart, profile aligned to the right */
 .nav-right {
   display: flex;
   align-items: center;
@@ -54,19 +63,22 @@
   justify-content: flex-end;
 }
 
+/* wrapper for search icon + input together */
 .search-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
+/* search icon positioned inside the input field on the left */
 .search-icon {
   position: absolute;
   left: 10px;
   font-size: 13px;
-  pointer-events: none;
+  pointer-events: none; /* prevents icon from blocking clicks on the input */
 }
 
+/* search input styling - pill shaped with padding to avoid text going under the icon */
 .search-input {
   border: none;
   background-color: #f1ebf4;
@@ -77,19 +89,24 @@
   outline: none;
 }
 
+/* shared styles for cart and profile icons */
 .icon {
   font-size: 26px;
   cursor: pointer;
 }
 
+/* slight fade on hover */
 .icon:hover {
   opacity: 0.7;
 }
 
+/* cart icon needs position relative so the badge can be positioned on top of it */
 .cart-icon {
   position: relative;
 }
 
+/* cart badge - the purple circle showing item count */
+/* position absolute places it relative to .cart-icon */
 .cart-badge {
   position: absolute;
   top: -8px;
@@ -100,7 +117,7 @@
   font-weight: bold;
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  border-radius: 50%; /* makes it a circle */
   display: flex;
   align-items: center;
   justify-content: center;
